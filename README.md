@@ -2,7 +2,8 @@
 
 ![Oppgave a)](/images/oblig2_a_skisse.jpg)
 
-
+Optimalisering av koden fra euler_pendelum_v1.py
+Dette mønsteret gjentar seg, så kan settes i en løkke ...
 ```python
 # Lets do one more step
 k = 2
