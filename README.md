@@ -7,7 +7,7 @@
 
 I filen [euler_pendelum_v1](oblig2/euler_pendelum_v1.py) er det gjennomgått de to førse stegene i Euler's metoden.
 
-I filen [euler_pendelum_v1](oblig2/euler_pendelum_v2.py) skal en løkke designes, samt funksjonen
+I filen [euler_pendelum_v2](oblig2/euler_pendelum_v2.py) skal en løkke designes, samt funksjonen
 ```python
 v, theta = lin_pendel_euler(v0, theta0, g, L, N, h);
 ```
