@@ -1,7 +1,9 @@
 import math
 
 # Main loop
-k = 0 # have to make a loop up to 2pow5=32
+# Remove this one, since it will be the counter in an iterative loop
+# According to the oblig2, you run first up to math.pow(2,5) and
+# then up to math.pow(2,10) (or 32 and )
 
 # Definition of storage; store the values for ploting and calculations
 t = []
@@ -10,23 +12,22 @@ v = []
 slopev_array = []
 slopetheta_array = []
 
-# Constants
+# Constants ++
+# Will be parameters to the function
+# v, theta = lin_pendel_euler(v0, theta0, g, L, N, h);
 g = 9.81
 L = 1.0
+T = 4.0
+N = math.pow(2,5)
+h = T/N
 
 # Initial values
-t0 = 0
+t0 = 0 # Using this to follow the theory for the Euler's method
 theta0 = round(math.pi/2, 2)
 v0 = 0
 
-# First point (initial), values put in the lists
-t.append(t0)
-theta.append(theta0)
-v.append(v0)
-slopev_array.append(round(-g*theta[0], 2))
-slopetheta_array.append(round(v[0]/L, 2))
-
-# Here is all of the values for the initial point
+# Here are all of the values for the initial point
+# We'll make this (printing) as separate function later
 print("k" + "\t" +
         "tk" + "\t" +
         "thetak" + "\t" +
@@ -34,43 +35,8 @@ print("k" + "\t" +
         "slopev" + "\t" +
         "slopetheta"
 )
-print(str(k) + "\t" +
-        str(t[0]) + "\t" +
-        str(theta[0]) + "\t" +
-        str(v[0]) + "\t" +
-        str(slopev_array[0]) + "\t" +
-        str(slopetheta_array[0])
-)
 
-# Continue to the next step k = 1 (making first step now)
-k = 1
-
-# We need to define the step size
-T = 4.0
-N = math.pow(2,5)
-h = T/N
-
-# Values at the next step (k=1)
-t1 = t0 + h
-theta1 = theta0 + h*slopetheta_array[0]
-v1 = v0 + h*slopev_array[0]
-
-# Second point, values put in the lists
-t.append(t1)
-theta.append(theta1)
-v.append(v1)
-slopev_array.append(round(-g*theta[1], 2))
-slopetheta_array.append(round(v[1]/L, 2))
-
-# Here is all of the values after the first step
-print(str(k) + "\t" +
-        str(t[1]) + "\t" +
-        str(theta[1]) + "\t" +
-        str(v[1]) + "\t" +
-        str(slopev_array[1]) + "\t" +
-        str(slopetheta_array[1])
-)
-
+# We have to put this part in the loop
 # Lets do one more step
 k = 2
 

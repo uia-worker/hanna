@@ -62,7 +62,7 @@ v.append(v1)
 slopev_array.append(round(-g*theta[1], 2))
 slopetheta_array.append(round(v[1]/L, 2))
 
-# Here is all of the values after the first step
+# Here are all of the values after the first step
 print(str(k) + "\t" +
         str(t[1]) + "\t" +
         str(theta[1]) + "\t" +

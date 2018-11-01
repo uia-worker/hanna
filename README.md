@@ -1,9 +1,19 @@
 # Leksehjelp :smile:
 
+## Oppgave a)
 ![Oppgave a)](/images/oblig2_a_skisse.jpg)
 
-Optimalisering av koden fra euler_pendelum_v1.py
-Dette mønsteret gjentar seg, så kan settes i en løkke ...
+## Oppgaver c) og d)
+
+I filen [euler_pendelum_v1](oblig2/euler_pendelum_v1.py) er det gjennomgått de to førse stegene i Euler's metoden.
+
+Optimalisering av koden fra euler_pendelum_v1.py betyr at man lager en løkke og implementerer funksjonen
+
+```python
+v, theta = lin_pendel_euler(v0, theta0, g, L, N, h);
+```
+
+Dette mønsteret fra [euler_pendelum_v1](oblig2/euler_pendelum_v1.py) gjentar seg, og kan settes i en løkke ...
 ```python
 # Lets do one more step
 k = 2
@@ -29,3 +39,7 @@ print(str(k) + "\t" +
         str(slopetheta_array[2])
 )
 ```
+
+Utskrift med print er kun for testing og vil bli erstattet med plotting.
+
+Fortsettelsen følger ...
