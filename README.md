@@ -34,7 +34,7 @@ y(n+1) = y(n) + h * A(n), hvor A(n) = f(x(n), y(n)), dvs. det er stigningsgraden
 
 I dette tilfelle har man 2 ligninger og stigningsgradene for de er:
 * `(-g * theta(k))` for den første og
-* `(v(k)/L)` for den andre.
+* `(v(k)/L) for den andre.
 
 I programmet er disse definert som
 ```python
@@ -51,46 +51,13 @@ k  | t(k)  | theta(k) | v(k)   | slopev(k)| slopetheta(k)
 2	 | 0.25	 | 1.33	    | -3.854 | -13.047  | -3.854
 
 
-I filen [euler_pendelum_v2](oblig2/euler_pendelum_v2.py) skal en løkke designes, samt funksjonen
+I filen [euler_pendelum_v2](oblig2/euler_pendelum_v2.py) er en løkke laget og en plot-funksjon implementert.
+
+Et eksempel på en numerisk løsningsforslag av det lineære systemet (3):
+![oblig2 d) numerisk løsning](/images/linear_euler_v2.png)
+
+I filen [euler_pendelum_v3](oblig2/euler_pendelum_v3.py)
 ```python
 v, theta = lin_pendel_euler(v0, theta0, g, L, N, h);
 ```
 skal implementeres.
-
-
-Optimalisering av koden fra euler_pendelum_v1.py betyr at man lager en løkke og implementerer funksjonen
-
-```python
-v, theta = lin_pendel_euler(v0, theta0, g, L, N, h);
-```
-
-Dette mønsteret fra [euler_pendelum_v1](oblig2/euler_pendelum_v1.py) gjentar seg, og kan settes i en løkke ...
-```python
-# Lets do one more step
-k = 2
-
-# Values at the next step (k=2)
-t2 = t1 + h
-theta2 = theta1 + h*slopetheta_array[1]
-v2 = v1 + h*slopev_array[1]
-
-# Third point, values put in the lists
-t.append(t2)
-theta.append(theta2)
-v.append(v2)
-slopev_array.append(round(-g*theta[2], 2))
-slopetheta_array.append(round(v[2]/L, 2))
-
-# Here is all of the values after the second step
-print(str(k) + "\t" +
-        str(t[2]) + "\t" +
-        str(theta[2]) + "\t" +
-        str(v[2]) + "\t" +
-        str(slopev_array[2]) + "\t" +
-        str(slopetheta_array[2])
-)
-```
-
-Utskrift med print er kun for testing og vil bli erstattet med plotting.
-
-Fortsettelsen følger ...

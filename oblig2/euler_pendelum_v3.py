@@ -50,6 +50,7 @@ v.append(v0)
 slopev_array.append(round(-g*theta[0], p))
 slopetheta_array.append(round(v[0]/L, p))
 
+
 # Use built-in range to iterate over a sequence of numbers k = 1, 2, ... N-1
 for k in range(1, N):
 # Values at the next step k
