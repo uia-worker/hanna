@@ -7,7 +7,7 @@ def plot_results(time, theta1):
     s = '(Initelle vinkelen = ' + str(theta0) + ' degrees)'
     plt.title("Oblig2 d)" + s)
     plt.ylabel('vinkel')
-    plt.legend(['ikke linear'], loc='lower right')
+    plt.legend(['lineær'], loc='lower right')
     plt.show()
 
 # Algorithm description
