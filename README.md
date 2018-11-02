@@ -11,7 +11,7 @@ Løser her ligningen med initielle betingelser (innebærer derivasjon)
 ![Oppgave b) Ark 2](/images/oblig2_b_skisse02.jpg)
 
 Kladd, hvis interesse av detaljert fremgangsmåte for derivasjon (usikker hvor mye detaljer er nødvendig)
-![Oppgave b) Kladd derivasjon](/images/oblig2_b_skisse03_kladd.jgp)
+![Oppgave b) Kladd derivasjon](/images/oblig2_b_skisse03_kladd.jpg)
 
 
 ## Oppgaver c) og d)
