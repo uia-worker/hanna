@@ -58,7 +58,7 @@ Innebygde funksjon `range` (https://docs.python.org/3/library/stdtypes.html#rang
 
 
 Et eksempel på en numerisk løsningsforslag av det lineære systemet (3):
-![oblig2 d) numerisk løsning](/images/linear_euler_v2.png)
+![oblig2 d) numerisk løsning v2](/images/linear_euler_v2.png)
 
 I filen [euler_pendelum_v3](oblig2/euler_pendelum_v3.py)
 ```python
@@ -77,3 +77,7 @@ v, theta = lin_pendel_euler(v0, theta0, g, L, N, h)
 # plott resultatene
 plot_results(t, theta)
 ```
+
+Plottet som er resultat av kommandoen `python3 euler_pendelum_v3`
+
+![oblig2 d) numerisk løsning v3](/images/linear_euler_v3.png)
