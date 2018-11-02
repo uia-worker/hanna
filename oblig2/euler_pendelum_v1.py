@@ -2,6 +2,7 @@ import math
 
 # Main loop
 k = 0 # have to make a loop up to 2pow5=32
+p = 3
 
 # Definition of storage; store the values for ploting and calculations
 t = []
@@ -16,15 +17,15 @@ L = 1.0
 
 # Initial values
 t0 = 0
-theta0 = round(math.pi/2, 2)
+theta0 = round(math.pi/2, p)
 v0 = 0
 
 # First point (initial), values put in the lists
 t.append(t0)
 theta.append(theta0)
 v.append(v0)
-slopev_array.append(round(-g*theta[0], 2))
-slopetheta_array.append(round(v[0]/L, 2))
+slopev_array.append(round(-g*theta[0], p))
+slopetheta_array.append(round(v[0]/L, p))
 
 # Here is all of the values for the initial point
 print("k" + "\t" +
@@ -52,15 +53,15 @@ h = T/N
 
 # Values at the next step (k=1)
 t1 = t0 + h
-theta1 = theta0 + h*slopetheta_array[0]
-v1 = v0 + h*slopev_array[0]
+theta1 = round((theta0 + h*slopetheta_array[0]), p)
+v1 = round((v0 + h*slopev_array[0]), p)
 
 # Second point, values put in the lists
 t.append(t1)
 theta.append(theta1)
 v.append(v1)
-slopev_array.append(round(-g*theta[1], 2))
-slopetheta_array.append(round(v[1]/L, 2))
+slopev_array.append(round(-g*theta[1], p))
+slopetheta_array.append(round(v[1]/L, p))
 
 # Here are all of the values after the first step
 print(str(k) + "\t" +
@@ -76,15 +77,15 @@ k = 2
 
 # Values at the next step (k=2)
 t2 = t1 + h
-theta2 = theta1 + h*slopetheta_array[1]
-v2 = v1 + h*slopev_array[1]
+theta2 = round((theta1 + h*slopetheta_array[1]), p)
+v2 = round((v1 + h*slopev_array[1]), p)
 
 # Third point, values put in the lists
 t.append(t2)
 theta.append(theta2)
 v.append(v2)
-slopev_array.append(round(-g*theta[2], 2))
-slopetheta_array.append(round(v[2]/L, 2))
+slopev_array.append(round(-g*theta[2], p))
+slopetheta_array.append(round(v[2]/L, p))
 
 # Here is all of the values after the second step
 print(str(k) + "\t" +
