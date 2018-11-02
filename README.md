@@ -81,3 +81,16 @@ plot_results(t, theta)
 Plottet som er resultat av kommandoen `python3 euler_pendelum_v3`
 
 ![oblig2 d) numerisk løsning v3](/images/linear_euler_v3.png)
+
+[euler_pendelum_v4](oblig2/euler_pendelum_v4.py) er plot-funksjon endret for å kunne vise to tidsserier i samme plot. Det er også generert en tidsserie basert på den anlytiske løsningen av ligningen (3), deloppgaven b)
+```python
+# Using the analytical solution of (3)
+theta2 = [(theta0 * math.cos(math.sqrt(g/L)*tt) +
+          v0/math.sqrt(g/L) * math.sin(math.sqrt(g/L)*tt)) for tt in t]
+```
+
+Plottet som er resultat av kommandoen `python3 euler_pendelum_v4`
+
+Som man kan se, er vår implementasjon av Euler's metoden (`lin_pendel_euler`) meget upresist og feilen øker vesentlig med tiden.
+
+![oblig2 d) numerisk løsning v4](/images/linear_euler_v4.png)
