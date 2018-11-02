@@ -3,6 +3,17 @@
 ## Oppgave a)
 ![Oppgave a)](/images/oblig2_a_skisse.jpg)
 
+## Oppgave b)
+Bruker den generelle løsningen for en annen ordens homogen differensialligning (usikker hvor mye detaljer trenges her, men tok med også noen eksempler)
+![Oppgave b) Ark 1](/images/oblig2_b_skisse01.jpg)
+
+Løser her ligningen med initielle betingelser (innebærer derivasjon)
+![Oppgave b) Ark 2](/images/oblig2_b_skisse02.jpg)
+
+Kladd, hvis interesse av detaljert fremgangsmåte for derivasjon (usikker hvor mye detaljer er nødvendig)
+![Oppgave b) Kladd derivasjon](/images/oblig2_b_skisse03_kladd.jgp)
+
+
 ## Oppgaver c) og d)
 
 I filen [euler_pendelum_v1](oblig2/euler_pendelum_v1.py) er det gjennomgått de to førse stegene i Euler's metoden.
