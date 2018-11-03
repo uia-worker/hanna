@@ -53,7 +53,7 @@ k  | t(k)  | theta(k) | v(k)   | slopev(k)| slopetheta(k)
 
 
 I filen [euler_pendelum_v2](oblig2/euler_pendelum_v2.py) er en løkke laget og en plot-funksjon implementert.
-Python lister er brukt slik at de er definert tomme og verdiene er lagt inn fortløpende med `appends`.
+Python lister er brukt slik at de er definert tomme og verdiene er lagt inn fortløpende med `append`.
 Innebygde funksjon `range` (https://docs.python.org/3/library/stdtypes.html#range) brukes for å itererer over verdiene i Euler ligningene.
 
 
@@ -78,7 +78,7 @@ v, theta = lin_pendel_euler(v0, theta0, g, L, N, h)
 plot_results(t, theta)
 ```
 
-Plottet som er resultat av kommandoen `python3 euler_pendelum_v3`
+Plottet som er resultat av kommandoen `python3 euler_pendelum_v3` (plottet er identisk med plottet laget med `python3 euler_pendelum_v2`, men i v2 var ikke funksjon `lin_pendel_euler` implementert):
 
 ![oblig2 d) numerisk løsning v3](/images/linear_euler_v3.png)
 
@@ -110,6 +110,33 @@ N    |   h        | error(h)
 64   | 0.0625     | 3.2259
 128  | 0.03125    | 1.2773
 256  | 0.015625   | 0.5561
-512  |0.0078125   | 0.2588
+512  | 0.0078125  | 0.2588
 1024 | 0.00390625 | 0.1248
  | |
+
+## Oppgave f)
+I versjon 6 [euler_pendelum_v6](oblig2/euler_pendelum_v6.py) legger jeg inn beregningen av p i samme løkke som beregnet feil i [euler_pendelum_v5](oblig2/euler_pendelum_v5.py)
+
+Algoritmen er ikke elegant, men bør være korrekt. Er usikker angående diskusjon her. Kanskje det finnes noe i pensumslitteraturen / forelesningsnoteter om dette ... Set ut at den konvergerer mot 1. Man prøver å gjøre kortere og kortere skritt, så poenget er kanskje å finne ut når det ikke hjelper lenger gjøre beregninger med mindre og mindre h.
+
+p - konvergensraten til Euler's (første grads) metode
+
+h1         | N1    | h2          | N2    | p
+-----------|-------|-------------|-------|--------------------
+0.125      | 32    | 0.0625      | 64    | 0.9734232372372456
+0.0625     | 64    | 0.03125     | 128   | 1.3365450161685446
+0.03125    | 128   | 0.015625    | 256   | 1.1996687163088346
+0.015625   | 256   | 0.0078125   | 512   | 1.1036911219109182
+0.0078125  | 512   | 0.00390625  | 1024  | 1.0524149385928583
+ | | | |
+
+## Oppgave g)
+I versjon 7 [euler_pendelum_v7](oblig2/euler_pendelum_v7.py) er den numeriske løsningen for den ikke-linære ligningen (2) implementert
+```python
+v, theta = pendel_euler(v0, theta0, g, L, N, h)
+```
+Forskjell fra `lin_pendel_euler` er at man bruker `sin(theta)` istendenfor `theta`.
+
+Her måtte man også skrive om plottfunksjonen, siden det er nå 3 grafer man ønsker å vise i det samme plottet.
+
+![oblig2 g) tre løsninger v7](/images/linear_euler_v7.png)
