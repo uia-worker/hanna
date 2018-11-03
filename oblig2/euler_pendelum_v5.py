@@ -26,7 +26,7 @@ def plot_results(time, theta1, theta2):
 g = 9.81
 L = 1.0
 T = 4.0
-N = 2**10
+N = 2**5
 h = T/N
 
 # building array with time values to be used in plot
@@ -71,12 +71,48 @@ def lin_pendel_euler(v0, theta0, g, L, N, h):
     return v, theta
 
 
-# Using the Euler's method to approximate a solution of the linearized
-# version of differential equations
-v, theta = lin_pendel_euler(v0, theta0, g, L, N, h)
+# Oblig2 part e)
+# In this section the error is calculated (could be implemented
+# as own function)
+#
+# There are some caveats in the code:
+#     o  there are a global variable t, which is a python list
+#        and has to be cleared after each loop
+#     o  the loop is running over pow2list which include
+#        alle powers of 2 from 5 to 10 (see e) in assignment
+#
+# Only the last pair of values are used.
+# That can give a wrong impression if the function are periodic
+# (plot the solution from euler_pendelum_v4 with different
+# values of N and reflect upon the results...)
+#
 
-# Using the analytical solution of (3)
-theta2 = [(theta0 * math.cos(math.sqrt(g/L)*tt) + v0/math.sqrt(g/L) * math.sin(math.sqrt(g/L)*tt)) for tt in t]
+def pow2(b):
+    return 2**b
+pow2list = list(map(pow2, range(5,11)))
+
+print("N" + "|" + "h" + "|" + "error(h)")
+print(5*"-" + "|" + 10*"-" + "|" + 10*"-")
+
+
+for N in pow2list:
+    h = T/N
+    # Using the Euler's method to approximate a solution of the linearized
+    # version of differential equations
+    v, theta = lin_pendel_euler(v0, theta0, g, L, N, h)
+
+
+    # Using the analytical solution of (3)
+    theta2 = [(theta0 * math.cos(math.sqrt(g/L)*tt) + v0/math.sqrt(g/L) * math.sin(math.sqrt(g/L)*tt)) for tt in t]
+
+    # Print the results in a table
+    print(str(N) + "|" + str(h) + "|" + str( round( abs(theta[len(theta)-1:][0] - theta2[len(theta)-1:][0]), 4) ))
+
+    if theta2:
+        theta2.clear()
+    if t:
+        t.clear()
+
 
 # plott resultatene
-plot_results(t, theta, theta2)
+#plot_results(t, theta, theta2)

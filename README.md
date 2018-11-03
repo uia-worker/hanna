@@ -94,3 +94,17 @@ Plottet som er resultat av kommandoen `python3 euler_pendelum_v4`
 Som man kan se, er vår implementasjon av Euler's metoden (`lin_pendel_euler`) meget upresist og feilen øker vesentlig med tiden.
 
 ![oblig2 d) numerisk løsning v4](/images/linear_euler_v4.png)
+
+## Oppgave e)
+
+I [euler_pendelum_v5](oblig2/euler_pendelum_v5.py) er feilen beregnet for de forskjellig steglengdene. Kun den siste verdien i Python listene theta og theta2 er brukt, så man må være oppmerksom på at i periodiske funksjoner (som jo en pendelbevegelse er), kan disse verdien, tatt kun på et punkt, være misvisende.
+
+Her er tabellen:
+N|h|error(h)
+-----|----------|----------
+32|0.125|6.334
+64|0.0625|3.2259
+128|0.03125|1.2773
+256|0.015625|0.5561
+512|0.0078125|0.2588
+1024|0.00390625|0.1248
