@@ -1,3 +1,8 @@
+# This solutiong is based on information from the video
+# https://www.youtube.com/watch?v=_eZyTNthJG4
+# "Coding a Numerical Solution to the Simple Pendulum Problem using Python"
+# by Freeball, Published on 29 Dec 2016
+
 import numpy as np
 from numpy import sin, cos
 from scipy.integrate import odeint

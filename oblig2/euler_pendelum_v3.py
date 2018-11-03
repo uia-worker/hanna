@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 # Function to plot the plot_results
 def plot_results(time, theta1):
     plt.plot(time, theta1)
-    s = '(Initelle vinkelen = ' + str(theta0) + ' degrees)'
+    s = '(Initelle vinkelen = ' + str(theta0) + ' radianer)'
     plt.title("Oblig2 d)" + s)
     plt.ylabel('vinkel')
     plt.legend(['lineær'], loc='lower right')

@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 def plot_results(time, theta1, theta2):
     plt.plot(time, theta1)
     plt.plot(time, theta2)
-    s = '(Initelle vinkelen = ' + str(theta0) + ' degrees)'
+    s = '(Initelle vinkelen = ' + str(theta0) + ' radianer)'
     plt.title("Oblig2 d)" + s)
     plt.ylabel('vinkel')
     plt.grid(True)
