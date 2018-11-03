@@ -34,7 +34,7 @@ y(n+1) = y(n) + h * A(n), hvor A(n) = f(x(n), y(n)), dvs. det er stigningsgraden
 
 I dette tilfelle har man 2 ligninger og stigningsgradene for de er:
 * `(-g * theta(k))` for den første og
-* `(v(k)/L) for den andre.
+* `(v(k)/L)` for den andre.
 
 I programmet er disse definert som
 ```python
