@@ -91,13 +91,16 @@ theta2 = [(theta0 * math.cos(math.sqrt(g/L)*tt) +
 
 Plottet som er resultat av kommandoen `python3 euler_pendelum_v4`
 
-Som man kan se, er vår implementasjon av Euler's metoden (`lin_pendel_euler`) meget upresist og feilen øker vesentlig med tiden.
+Som man kan se, er vår implementasjon av Euler's metoden (`lin_pendel_euler`) meget upresist og feilen øker vesentlig med tiden med steglengde `h=T/N`, hvor `T=4` og `N=2ˆ5`
 
 ![oblig2 d) numerisk løsning v4](/images/linear_euler_v4.png)
 
+Med kortere steglengde `h=T/N`, hvor `T=4` og `N=2ˆ10` er resultatet mye bedre
+![oblig2 d) numerisk løsning v4 small steps](/images/linear_euler_v4_small_steps.png)
+
 ## Oppgave e)
 
-I [euler_pendelum_v5](oblig2/euler_pendelum_v5.py) er feilen beregnet for de forskjellig steglengdene. Kun den siste verdien i Python listene theta og theta2 er brukt, så man må være oppmerksom på at i periodiske funksjoner (som jo en pendelbevegelse er), kan disse verdien, tatt kun på et punkt, være misvisende.
+I [euler_pendelum_v5](oblig2/euler_pendelum_v5.py) er feilen beregnet for de forskjellig steglengdene. Kun den siste verdien i Python listene `theta` og `theta2` er brukt, så man må være oppmerksom på at i periodiske funksjoner (som jo en pendelbevegelse er), kan disse verdien, tatt kun på et punkt, være misvisende.
 
 Her er tabellen:
 N|h|error(h)
